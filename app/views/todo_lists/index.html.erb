@@ -1,27 +1,10 @@
-<h1>Listing todo_lists</h1>
+<% @todo_lists.each do |todo_list| %>
+  <div class="index_row clearfix">
+    <h2 class="todo_list_title"><%= link_to todo_list.title, todo_list %></h2>
+    <p class="todo_list_sub_title"><%= todo_list.description %></p>
+  </div>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @todo_lists.each do |todo_list| %>
-      <tr>
-        <td><%= todo_list.title %></td>
-        <td><%= todo_list.description %></td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Todo list', new_todo_list_path %>
+<div class="links">
+  <%= link_to "New Todo List", new_todo_list_path %>
+</div>
