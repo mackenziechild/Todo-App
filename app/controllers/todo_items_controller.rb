@@ -32,7 +32,7 @@ class TodoItemsController < ApplicationController
 	end
 
 	def todo_item_params
-		params[:todo_item].permit(:content)
+		params[:todo_item].permit(:content, :due_date, :recur_number, :recur_unit)
 	end
 
 end
