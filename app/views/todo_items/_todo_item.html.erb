@@ -20,7 +20,7 @@
 			<% end %>
 		</div>
 		<div class="todo_item">
-			<p><%= todo_item.content %></p>
+			<p><%= todo_item.content %><small>     (Repeats every <%= todo_item.recur_number %> <%= todo_item.recur_unit %>)</small></p>
 		</div>
 		<div class="trash">
 			<%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure?" } do %>

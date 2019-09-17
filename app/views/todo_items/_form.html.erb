@@ -1,6 +1,6 @@
 <%= form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
 	<%= f.text_field :content, placeholder: "Todo title" %>
-	<p>Repeat me every <%= f.select :recur_number, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] %> <%= f.select :recur_unit, ['days', 'weeks', 'months'] %></p>
+	<p>Repeat me every <%= f.select :recur_number, ["1", "2", "3", "4"] %> <%= f.select :recur_unit, ['days', 'weeks', 'months'] %></p>
 	<p>Due date: <%= f.text_field :due_date, data:{ provide:'datepicker' } %></p>
 	<%= f.submit %>
 <% end %>
